@@ -22,6 +22,7 @@ const styles = theme => createStyles({
     backgroundColor: theme.palette.sedona.darkestgray,
     width: "100%",
     backgroundPosition: "left",
+    textAlign: "center",
     padding: theme.spacing.unit,
     // backgroundImage: `url(${sedonaChipDG})`,
     backgroundPositionX: "unset",
@@ -49,7 +50,7 @@ const styles = theme => createStyles({
     color: theme.palette.sedona.lightgray,
   },
   listRow: {
-    height: "56px",
+    height: "40px",
   },
   iconCell: {
     color: theme.palette.sedona.white,
@@ -80,7 +81,7 @@ const styles = theme => createStyles({
   },
   digitalImage: {
     backgroundImage: `url(${digitalImage})`,
-    minHeight: "620px",
+    minHeight: "500px",
     backgroundSize: "cover",
     backgroundPosition: "center",
     [theme.breakpoints.down('sm')]: {
@@ -147,7 +148,7 @@ class DigitalServices extends React.Component {
                 Sedona Digital Services
               </Typography>
               <Typography variant="h4" className={classes.subheading}>
-                Some text about Sedona Digital Services
+                Platform integrations for the modern mobile network operator
               </Typography>
               <table className={classes.table}>
                 <tbody>

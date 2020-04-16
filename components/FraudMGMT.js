@@ -37,6 +37,9 @@ const styles = theme => createStyles({
       backgroundAttachment: "fixed",
     },
   },
+  serviceLogoContainer: {
+    textAlign: 'center',
+  },
   serviceLogo: {
     height: "80px",
     margin: "0 0 20px",
@@ -64,7 +67,7 @@ const styles = theme => createStyles({
     color: theme.palette.sedona.beige,
   },
   listRow: {
-    height: "56px",
+    height: "40px",
   },
   iconCell: {
     color: theme.palette.sedona.lightgray,
@@ -91,6 +94,12 @@ const styles = theme => createStyles({
   },
   table: {
     margin: "0 auto",
+  },
+  aboutText: {
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '460px',
+      margin: '0 auto',
+    }
   }
 });
 
@@ -100,19 +109,19 @@ class FraudMGMT extends React.Component {
   state = {
     providedByPlatformData: [
       {
-        icon: (<EqualizerIcon className={this.props.classes.icon} />),
-        text: 'A highly efficient realtime data analytics platform'
+        icon: (<FindInPageIcon className={this.props.classes.icon} />),
+        text: 'Optimized for mobile telecommunications operators'
       },
       {
-        icon: (<DeveloperBoardIcon className={this.props.classes.icon} />),
-        text: 'Machine learning and robotic process automation'
+        icon: (<EqualizerIcon className={this.props.classes.icon} />),
+        text: 'Realtime data analytics platform with machine learning'
       },
       {
         icon: (<SecurityIcon className={this.props.classes.icon} />),
-        text: 'Fraud coverage for traditional services plus VAS/OTT'
+        text: 'Fraud coverage for traditional and digital services'
       },
       {
-        icon: (<AttachMoneyIcon className={this.props.classes.icon} />),
+        icon: (<SecurityIcon className={this.props.classes.icon} />),
         text: 'Mobile Financial Services (MFS) fraud management'
       },
       {
@@ -120,8 +129,8 @@ class FraudMGMT extends React.Component {
         text: 'Realtime payment approval and risk scoring engine'
       },
       {
-        icon: (<FindInPageIcon className={this.props.classes.icon} />),
-        text: 'Compliance (AML/CFT) and revenue assurance audits'
+        icon: (<DeveloperBoardIcon className={this.props.classes.icon} />),
+        text: 'SIM-swap fraud protection real-time payments'
       },
     ]
   }
@@ -133,7 +142,7 @@ class FraudMGMT extends React.Component {
     return (
       <div className={classes.FraudMGMT} >
         <Grid container spacing={5}>
-          <Grid item xs={12}>
+          <Grid item xs={12} className={classes.serviceLogoContainer}>
             <img src={sedonaShieldDG} className={classes.serviceLogo} alt="Sedona Fraud Management" />
             <Typography variant="h2" align="center" className={`${classes.FraudMGMTText} ${classes.darkgray}`}>
               Sedona FMS 
@@ -144,22 +153,17 @@ class FraudMGMT extends React.Component {
           </Grid>
           <Grid container spacing={5}>
           <Grid item xs={12} md={6} className={classes.description}>
-            <div className={classes.extraPaddingMobile}>
-              <Typography variant="h3" className={classes.darkgray}>
-                Overview
-              </Typography>
+            <div className={`${classes.aboutText} ${classes.extraPaddingMobile}`}>
               <Typography variant="body1" align="left" className={classes.darkgray}>
-                Sedona Fraud Management System (Sedona FMS) is a flexible and powerful real time data analytics platform focused exclusively on the fraud management needs of modern telecom operators. 
-                <br /><br />
-                Sedona FMS is the most efficient telecommunications data analytics engine on the market, capable of analyzing billions of data records in realtime, without any database or “big data” software requirement. The system employs robot process automation (RPA) and a lightweight machine learning (ML) framework that was specifically designed and optimized for telecommunications data, applying predictive fraud analysis to the wide range of fraud scenarios facing telecom operators today.
+              Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
           <div className={classes.extraPaddingMobile}>
-            <Typography variant="h3">
+            {/* <Typography variant="h3">
               Our platform provides you
-            </Typography>
+            </Typography> */}
             <table className={classes.table}>
               <tbody>
                 {this.state.providedByPlatformData.map((item, i) => (

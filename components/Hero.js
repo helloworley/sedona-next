@@ -19,6 +19,9 @@ const styles = theme => createStyles({
     [theme.breakpoints.down('xs')]: {
       background: "none",
     },
+    [theme.breakpoints.up('md')]: {
+      height: "900px",
+    },
     position: "absolute",
   },
   hero: {
@@ -27,29 +30,61 @@ const styles = theme => createStyles({
     width: "100%",
     backgroundPosition: "left",
     backgroundSize: "cover",
+    backgroundAttachment: "fixed",
     padding: theme.spacing.unit,
-    [theme.breakpoints.down('xs')]: {
-      padding: "300px 60px 0",
-      backgroundImage: `url(${bgImageMobile})`,
-    },
-    [theme.breakpoints.up('sm')]: {
-      padding: "300px 10% 0 30%",
-      backgroundPosition: "center",
-      backgroundImage: `url(${bgImageTablet})`,
-    },
+    position: "relative",
+    backgroundImage: `url(${bgImage})`,
+    backgroundPosition: "-147px -15.3em",
+    backgroundSize: "1960px auto",
+    backgroundRepeat: "no-repeat",
     [theme.breakpoints.up('md')]: {
-      padding: "300px 5% 0 35%",
       backgroundImage: `url(${bgImage})`,
-      backgroundPosition: "left",
+      backgroundPositionX: "left",
+      backgroundPositionY: "bottom",
+      backgroundPositionY: "-80px",
+      backgroundPositionX: "left",
+      backgroundSize: "cover",
     },
+    // [theme.breakpoints.down('xs')]: {
+    //   backgroundImage: `url(${bgImageMobile})`,
+    // },
+    // [theme.breakpoints.up('sm')]: {
+    //   backgroundPosition: "center",
+    //   backgroundImage: `url(${bgImageTablet})`,
+    // },
+    // [theme.breakpoints.up('md')]: {
+    //   backgroundImage: `url(${bgImage})`,
+    //   backgroundPosition: "left",
+    // },
   },
   heroText: {
     color: "#fff",
     maxWidth: "600px",
-    fontSize: "32px",
-    [theme.breakpoints.up('md')]: {
-      fontSize: "48px",
+    textAlign: "left",
+    position: "absolute",
+    marginLeft: "auto",
+    marginRight: "auto",
+    right: "0",
+    fontWeight: "900",
+    lineHeight: "1.2em",
+    letterSpacing: "0px",
+    textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+    left: "43%",
+    fontSize: "1.4em",
+    top: "45%",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "2.4em",
     },
+    [theme.breakpoints.up('md')]: {
+      top: "45%",
+      left: "50%",
+      fontSize: "3em",
+      margin: "0",
+      maxWidth: "800px",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: "4em",
+    }
   }
 });
 
@@ -60,7 +95,7 @@ class Hero extends React.Component {
         <Grid className={this.props.classes.heroOverlay}></Grid>
         <Grid className={this.props.classes.hero}>
           <Typography variant="h1" align="left" className={this.props.classes.heroText}>
-            Empowering Mobile Network Operators in a Digital Age
+            Empowering Mobile <br/> Network Operators <br/> in a Digital Age
           </Typography>
         </Grid>
       </Grid>

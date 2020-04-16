@@ -37,6 +37,7 @@ const styles = theme => createStyles({
   header: {
     margin: "0 0 15px",
     color: theme.palette.sedona.darkgray,
+    textAlign: "center",
   },
   lightgray: {
     color: theme.palette.sedona.lightgray,
@@ -111,20 +112,11 @@ class Form extends React.Component {
               How may we help you?
             </Typography>
 
-            <form action="https://usebasin.com/f/157e96a3e6e6" method="POST">
+            <form action="#" method="POST">
 
               <Grid container spacing={5}>
-{/* 
-              <Grid 
-                item xs={12} md={6}
-                dangerouslySetInnerHTML={{__html: this.props.contactForm}}
-              >
-              </Grid> */}
-
-              
 
                 <Grid item xs={12} md={6}>
-
 
                   <TextField
                     name="Name"
@@ -203,7 +195,6 @@ class Form extends React.Component {
                       variant="filled"
                     />
                   </div>
-
 
                   <Button variant="contained" color="primary" type="submit" value="Send" className={classes.button}>
                       Send        

@@ -13,7 +13,7 @@ const styles = theme => createStyles({
     backgroundColor: theme.palette.sedona.white,
     width: "100%",
     padding: theme.spacing.unit,
-    background: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(${companyInfoImage})`,
+    background: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${companyInfoImage})`,
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -61,7 +61,11 @@ class AboutSedona extends React.Component {
                   About Sedona
                 </Typography>
                 <Typography variant="body1" align="left">
-                Based In Daikanyama, Tokyo, Sedona was founded by leaders in the field of telecom Revenue Assurance and Fraud Management. Sedona has brought together a best-in-breed team of professionals, with extensive industry experience.  We value customer service first and foremost, and follow the software-as-a-service (SaaS) business model to provide turnkey solutions. We harness the latest technologies in data analytics, machine learning and blockchain, and all of our solutions include perpetual upgrades and support. Deploying Sedona solutions will automate daily RAFM coverage, giving you peace of mind and freeing up your valuable RAFM team resources for more important priorities associated with growing your business. 
+                  Based In Daikanyama, Tokyo, Sedona was founded by leaders in the field of telecom Revenue Assurance and Fraud Management. Sedona has brought together a best-in-breed team of professionals, with extensive industry experience. We value customer service first and foremost, and follow the software-as-a-service (SaaS) business model to provide turnkey solutions.
+                  <br/><br/>
+                  We harness the latest technologies in data analytics, machine learning and blockchain, and all of our solutions include perpetual upgrades and support.
+                  <br/><br/>
+                  Deploying Sedona solutions will automate daily RAFM coverage, giving you peace of mind and freeing up your valuable RAFM team resources for more important priorities associated with growing your business.
                 </Typography>
               </div>
             </div>
