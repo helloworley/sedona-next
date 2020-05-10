@@ -21,12 +21,12 @@ const theme = createMuiTheme({
     },
     typography: {
       fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
         'Roboto',
         '"Helvetica Neue"',
         'Arial',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
         'sans-serif',
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',

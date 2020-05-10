@@ -14,14 +14,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "^4.7.0",
-    "@material-ui/icons": "^4.5.1",
-    "next": "^9.1.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "latest",
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.9.1",
+    "@react-spring/parallax": "9.0.0-canary.808.8.4a87fcb",
+    "babel-cli": "^6.26.0",
+    "next": "^9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-parallax": "^3.0.3",
+    "react-scripts": "^3.4.1",
     "react-scroll-to-component": "^1.0.2",
+    "react-spring": "^8.0.27",
     "theme-ui": "^0.2.49",
-    "tween": "^0.9.0"
+    "tween": "^0.9.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0"
   }
 }

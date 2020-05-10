@@ -61,11 +61,9 @@ class AboutSedona extends React.Component {
                   About Sedona
                 </Typography>
                 <Typography variant="body1" align="left">
-                  Based In Daikanyama, Tokyo, Sedona was founded by leaders in the field of telecom Revenue Assurance and Fraud Management. Sedona has brought together a best-in-breed team of professionals, with extensive industry experience. We value customer service first and foremost, and follow the software-as-a-service (SaaS) business model to provide turnkey solutions.
-                  <br/><br/>
-                  We harness the latest technologies in data analytics, machine learning and blockchain, and all of our solutions include perpetual upgrades and support.
-                  <br/><br/>
-                  Deploying Sedona solutions will automate daily RAFM coverage, giving you peace of mind and freeing up your valuable RAFM team resources for more important priorities associated with growing your business.
+                Headquartered in Tokyo but with a global presence, Sedona was founded by leaders in the field of telecom Revenue Assurance, Fraud Management and Digital Service Delivery. We brought together a best-in-breed team of professionals with extensive industry experience that harness the latest technologies in data analytics, machine learning and blockchain.
+                <br/><br/>
+                We value customer service first and foremost, and follow the software-as-a-service (SaaS) business model to provide turnkey solutions.
                 </Typography>
               </div>
             </div>

@@ -210,7 +210,7 @@ class Form extends React.Component {
 
         <Grid item xs={12} md={6}>
           <div className={this.props.classes.DigitalServices}>
-          <iframe className={this.props.classes.googleMap} title="Sedona Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.15983472589!2d139.7003073511958!3d35.64843348010474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b459e9a8fd1%3A0x7d0ee33b7f1b4187!2sTENOHA+LAB!5e0!3m2!1sen!2sjp!4v1552429807309" frameBorder="0"  allowFullScreen></iframe>
+          <iframe className={this.props.classes.googleMap} title="Sedona Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.2179990586224!2d139.70185441560622!3d35.647000280202256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4687305b9b%3A0x9f335559f0eed5e1!2s1-ch%C5%8Dme-33-6%20Ebisunishi%2C%20Shibuya%20City%2C%20T%C5%8Dky%C5%8D-to%20150-0021!5e0!3m2!1sen!2sjp!4v1589112264922!5m2!1sen!2sjp"  frameBorder="0"  allowFullScreen></iframe>
           </div>  
         </Grid>
       </Grid>

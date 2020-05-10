@@ -14,6 +14,8 @@ const digitalImage = '/connected-energy-grid.jpg';
 import PeopleIcon from '@material-ui/icons/People';
 import TapAndPlayIcon from '@material-ui/icons/TapAndPlay';
 import WidgetsIcon from '@material-ui/icons/Widgets';
+import LockIcon from '@material-ui/icons/Lock';
+import ShowChartIcon from '@material-ui/icons/ShowChart';
 
 
 
@@ -118,16 +120,16 @@ class DigitalServices extends React.Component {
         text: (<span><Link href={"https://www.telco.in/"} className={this.props.classes.link} target="_blank">Telcoin</Link> remittance integration and support</span>)
       },
       {
+        icon: (<ShowChartIcon className={this.props.classes.icon} />),
+        text: 'Sovereign financial services (MFS2.0)'
+      },
+      {
+        icon: (<LockIcon className={this.props.classes.icon} />),
+        text: 'Blockchain-based payment system integration'
+      },
+      {
         icon: (<PeopleIcon className={this.props.classes.icon} />),
-        text: 'Mobile operator branded social networking applications'
-      },
-      {
-        icon: (<TapAndPlayIcon className={this.props.classes.icon} />),
-        text: 'Marketing and commercial model optimization services'
-      },
-      {
-        icon: (<WidgetsIcon className={this.props.classes.icon} />),
-        text: 'Blockchain based OTT revenue share implementations'
+        text: 'Open social networking applications'
       },
     ]
   }

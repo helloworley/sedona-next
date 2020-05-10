@@ -73,8 +73,8 @@ class Footer extends React.Component {
             </Typography>
             <Typography variant="body2" align="left">
               SEDONA K.K.<br />
-              Daikanyama-cho 20-23 2F<br />
-              Shibuya-ku, Tokyo 150-0034<br />
+              Ebisunishi 1-33-6 1F<br/>
+              Shibuya, Tokyo 150-0021<br/>
               JAPAN
             </Typography>
           </Grid>
