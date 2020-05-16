@@ -17,7 +17,7 @@ const styles = theme => createStyles({
     backgroundPosition: "left",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
-    padding: theme.spacing.unit,
+    padding: theme.spacing,
     position: "relative",
     // backgroundImage: `url(${bgImage})`,
     backgroundPosition: "-147px -15.3em",
@@ -38,7 +38,7 @@ const styles = theme => createStyles({
     width: "100%",
     backgroundPosition: "left",
     backgroundSize: "cover",
-    padding: theme.spacing.unit,
+    padding: theme.spacing,
     [theme.breakpoints.down('xs')]: {
       background: "none",
     },

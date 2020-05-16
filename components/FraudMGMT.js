@@ -21,7 +21,7 @@ const styles = theme => createStyles({
     backgroundColor: theme.palette.sedona.white,
     width: "100%",
     backgroundPosition: "center",
-    padding: theme.spacing.unit,
+    padding: theme.spacing,
     // backgroundImage: `url(${sedonaShieldLG})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

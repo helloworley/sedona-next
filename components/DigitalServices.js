@@ -25,7 +25,7 @@ const styles = theme => createStyles({
     width: "100%",
     backgroundPosition: "left",
     textAlign: "center",
-    padding: theme.spacing.unit,
+    padding: theme.spacing,
     // backgroundImage: `url(${sedonaChipDG})`,
     backgroundPositionX: "unset",
     backgroundPositionY: "60px",

@@ -12,7 +12,7 @@ const styles = theme => createStyles({
   companyInfo: {
     backgroundColor: theme.palette.sedona.white,
     width: "100%",
-    padding: theme.spacing.unit,
+    padding: theme.spacing,
     background: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${companyInfoImage})`,
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
