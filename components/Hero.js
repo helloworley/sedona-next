@@ -6,31 +6,35 @@ import { Parallax, Background } from 'react-parallax';
 
 // assets
 const bgImageMobile = '/sedona-mountain-side-mobile.jpg';
+const bgImageMobilePortrait = '/sedona-mountain-side-mobile-portrait.jpg';
 const bgImageTablet = '/sedona-mountain-side-tablet.jpg';
-const bgImage = '/sedona-mountain-side-full-c.jpg';
+const bgImage = '/sedona-mountain-side.jpg';
 
 const styles = theme => createStyles({
-  parallax: {
-    height: "900px",
-    maxHeight: "90vh",
+  hero: {
+    minHeight: "770px",
     width: "100%",
-    backgroundPosition: "left",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
-    padding: theme.spacing,
+    padding: theme.spacing(1),
     position: "relative",
-    // backgroundImage: `url(${bgImage})`,
-    backgroundPosition: "-147px -15.3em",
-    backgroundSize: "1960px auto",
+    backgroundImage: `url(${bgImageMobile})`,
+    backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
-    [theme.breakpoints.up('md')]: {
-      // backgroundImage: `url(${bgImage})`,
-      backgroundPositionX: "left",
-      backgroundPositionY: "bottom",
-      backgroundPositionY: "-80px",
-      backgroundPositionX: "left",
-      backgroundSize: "cover",
+    backgroundAttachment: 'fixed',
+    [theme.breakpoints.up('sm')]: {
+      backgroundImage: `url(${bgImageTablet})`,
+      '@media screen and (orientation:landscape)': {
+        minHeight: "360px",
+        backgroundImage: `url(${bgImageMobilePortrait})`
+      },
+      minHeight: '1100px',
     },
+    [theme.breakpoints.up('md')]: {
+      backgroundImage: `url(${bgImage})`,
+      minHeight: '860px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      backgroundPosition: 'center'
+    }
   },
   heroOverlay: {
     height: "800px",
@@ -38,17 +42,13 @@ const styles = theme => createStyles({
     width: "100%",
     backgroundPosition: "left",
     backgroundSize: "cover",
-    padding: theme.spacing,
-    [theme.breakpoints.down('xs')]: {
-      background: "none",
-    },
+    padding: theme.spacing(1),
+    // [theme.breakpoints.down('xs')]: {
+    //   background: "none",
+    // },
     [theme.breakpoints.up('md')]: {
       height: "900px",
     },
-    position: "absolute",
-  },
-  hero: {
-    
   },
   heroText: {
     color: "#fff",
@@ -68,6 +68,9 @@ const styles = theme => createStyles({
     fontWeight: "800",
     [theme.breakpoints.up('sm')]: {
       fontSize: "2.4em",
+      '@media screen and (orientation:landscape)': {
+        fontSize: "2em",
+      }
     },
     [theme.breakpoints.up('md')]: {
       top: "45%",
@@ -83,41 +86,19 @@ const styles = theme => createStyles({
 });
 
 
-const parallaxBackgroundStyle = {
-  left: '860px',
-  bottom: '-420px',
-  wdith: '120%',
-  height: 'auto',
-}
-
 class Hero extends React.Component {
   render() {
     
     return (
-      <Parallax 
-        bgImage={bgImage} 
-        strength={400} 
-        className={this.props.classes.parallax}
-        bgImageStyle={parallaxBackgroundStyle}
-      >
-        <div style={{ height: 800 }}>
-          <div className={this.props.classes.hero}>
-            <Typography variant="h1" align="left" className={this.props.classes.heroText}>
-              Empowering Mobile <br/> Network Operators <br/> in a Digital Age.
-            </Typography>
-          </div>
-        </div>
-      </Parallax>
 
-
-      // <Grid className={this.props.classes.heroContainer}>
-      //   <Grid className={this.props.classes.heroOverlay}></Grid>
-      //   <Grid className={this.props.classes.hero}>
-      //     <Typography variant="h1" align="left" className={this.props.classes.heroText}>
-      //       Empowering Mobile <br/> Network Operators <br/> in a Digital Age
-      //     </Typography>
-      //   </Grid>
-      // </Grid>
+      <>
+        {/* <Grid className={this.props.classes.heroOverlay}></Grid> */}
+        <Grid className={this.props.classes.hero}>
+          <Typography variant="h1" align="left" className={this.props.classes.heroText}>
+            Empowering Mobile <br/> Network Operators <br/> in a Digital Age
+          </Typography>
+        </Grid>
+      </>
     )
   } 
 }

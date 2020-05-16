@@ -4,7 +4,10 @@ import { ServerStyleSheets } from '@material-ui/core/styles';
 
 const bodyStyles = {
   maxWidth: '100%',
-  overflowX: 'hidden'
+  overflowX: 'hidden',
+  '-webkit-text-size-adjust': '100%',
+  '-moz-text-size-adjust': '100%',
+  '-ms-text-size-adjust': '100%'
 }
 
 

@@ -13,7 +13,7 @@ const styles = theme => createStyles({
     width: "100%",
     backgroundPosition: "left",
     backgroundSize: "cover",
-    padding: theme.spacing,
+    padding: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       padding: theme.section.padding.xs
     },
