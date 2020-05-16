@@ -55,6 +55,12 @@ const styles = theme => createStyles({
     [theme.breakpoints.up('md')]: {
       height: "672px",
     }
+  },
+  contactUs: {
+    backgroundColor: '#fff',
+  },
+  formColumn: {
+    textAlign: 'center',
   }
 });
 
@@ -181,7 +187,7 @@ class Form extends React.Component {
 
     return (
       
-        <Grid container spacing={0}>
+        <Grid container spacing={0} className={classes.contactUs}>
 
         <Grid item xs={12} md={6}>
 
@@ -203,7 +209,7 @@ class Form extends React.Component {
 
               <Grid container spacing={5}>
 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} className={classes.formColumn}>
 
                   <TextField
                     name="Name"
@@ -265,7 +271,7 @@ class Form extends React.Component {
                 </Grid>
 
 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} className={classes.formColumn}>
 
                   <div>
                     <TextField

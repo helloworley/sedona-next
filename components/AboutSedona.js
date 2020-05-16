@@ -11,7 +11,7 @@ const companyInfoImage = '/tokyo.jpg';
 const styles = theme => createStyles({
   companyInfo: {
     backgroundColor: theme.palette.sedona.white,
-    width: "100%",
+    // width: "100%",
     padding: theme.spacing(1),
     background: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(${companyInfoImage})`,
     backgroundAttachment: "fixed",

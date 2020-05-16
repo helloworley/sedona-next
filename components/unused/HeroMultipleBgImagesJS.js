@@ -27,6 +27,14 @@ const styles = theme => createStyles({
     backgroundAttachment: 'fixed',
     backgroundPositionX: '-230px',
     backgroundSize: 'cover',
+    background: 'rgba(236,235,233,1)',
+    background: '-moz-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-webkit-gradient(left top, left bottom, color-stop(0%, rgba(236,235,233,1)), color-stop(51%, rgba(247,206,163,1)), color-stop(100%, rgba(243,217,188,1)))',
+    background: '-webkit-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-o-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-ms-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: 'linear-gradient(to bottom, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ecebe9", endColorstr="#f3d9bc", GradientType=0 )',
     '@media screen and (min-width: 426px)': {
       minHeight: "160vw",
     },
@@ -100,25 +108,9 @@ const styles = theme => createStyles({
   heroBackground: {
     width: '100%',
     height: 'auto',
-    position: 'fixed',
-    bottom:'0',
-    top: '0',
-    zIndex: '-1',
-  },
-  bgFallback: {
-    background: 'rgba(236,235,233,1)',
-    // background: '-moz-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-webkit-gradient(left top, left bottom, color-stop(0%, rgba(236,235,233,1)), color-stop(51%, rgba(247,206,163,1)), color-stop(100%, rgba(243,217,188,1)))',
-    // background: '-webkit-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-o-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-ms-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: 'linear-gradient(to bottom, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ecebe9", endColorstr="#f3d9bc", GradientType=0 )',
-    width: '100%',
-    height: '100vh',
     position: 'absolute',
-    top: '0',
-    zIndex: '-2',
+    bottom:'0',
+    zIndex: '-1'
   }
 });
 
@@ -163,7 +155,6 @@ class Hero extends React.Component {
 
     return (
 
-      <>
       <div className={classes.hero}>
         {/* <Grid className={this.props.classes.heroOverlay}></Grid> */}
         <Grid className={this.props.classes.heroTextContainer}>
@@ -172,10 +163,7 @@ class Hero extends React.Component {
           </Typography>
         </Grid>
         <img id="hero-background" className={classes.heroBackground} />
-        <div className={classes.bgFallback} />
       </div>
-      
-      </>
     )
   } 
 }

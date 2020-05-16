@@ -121,7 +121,7 @@ class DigitalServices extends React.Component {
       },
       {
         icon: (<ShowChartIcon className={this.props.classes.icon} />),
-        text: 'Sovereign financial services (MFS2.0)'
+        text: 'Sovereign mobile financial services (MFS 2.0)'
       },
       {
         icon: (<LockIcon className={this.props.classes.icon} />),

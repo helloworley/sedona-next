@@ -5,9 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import { Parallax, Background } from 'react-parallax';
 
 // assets
-const bgImageMobile = '/sedona-mountain-side-mobile.jpg';
-const bgImageMobilePortrait = '/sedona-mountain-side-mobile-portrait.jpg';
-const bgImageTablet = '/sedona-mountain-side-tablet.jpg';
 const bgImage = '/sedona-mountain-side.jpg';
 
 const styles = theme => createStyles({
@@ -16,20 +13,25 @@ const styles = theme => createStyles({
     width: "100%",
     padding: theme.spacing(1),
     position: "relative",
-    backgroundImage: `url(${bgImageMobile})`,
+    backgroundImage: `url(${bgImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
     backgroundAttachment: 'fixed',
+    background: 'rgba(236,235,233,1)',
+    background: '-moz-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-webkit-gradient(left top, left bottom, color-stop(0%, rgba(236,235,233,1)), color-stop(51%, rgba(247,206,163,1)), color-stop(100%, rgba(243,217,188,1)))',
+    background: '-webkit-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-o-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: '-ms-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    background: 'linear-gradient(to bottom, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ecebe9", endColorstr="#f3d9bc", GradientType=0 )',
     [theme.breakpoints.up('sm')]: {
-      backgroundImage: `url(${bgImageTablet})`,
       '@media screen and (orientation:landscape)': {
         minHeight: "360px",
-        backgroundImage: `url(${bgImageMobilePortrait})`
       },
       minHeight: '1100px',
     },
     [theme.breakpoints.up('md')]: {
-      backgroundImage: `url(${bgImage})`,
       minHeight: '860px',
     },
     [theme.breakpoints.up('lg')]: {
