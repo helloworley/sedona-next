@@ -4,5 +4,8 @@ module.exports = {
     return {
       '/': { page: '/' }
     };
-  }
+  },
+  env: {
+    formApi: 'https://usebasin.com/f/bfefabc83256.json',
+  },
 };

@@ -132,7 +132,7 @@ class Form extends React.Component {
       e.preventDefault();
       const formData = this.getData();
       this.submitStatus = 'PENDING';
-      fetch(`https://usebasin.com/f/bfefabc83256.json`, {
+      fetch(`${process.env.formApi}`, {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
