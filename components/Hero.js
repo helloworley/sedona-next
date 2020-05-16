@@ -5,35 +5,47 @@ import Grid from '@material-ui/core/Grid';
 import { Parallax, Background } from 'react-parallax';
 
 // assets
-const bgImageMobile = '/sedona-mountain-side-mobile.jpg';
-const bgImageMobilePortrait = '/sedona-mountain-side-mobile-portrait.jpg';
-const bgImageTablet = '/sedona-mountain-side-tablet.jpg';
-const bgImage = '/sedona-mountain-side.jpg';
+
+const IMAGE_URLS = {
+  desktopLarge: '/sedona-mountain-side.jpg',
+  desktop: '/sedona-mountain-side-desktop.jpg',
+  mobile: '/sedona-mountain-side-mobile.jpg',
+  mobilePortrait: '/sedona-mountain-side-mobile-portrait.jpg',
+  tablet: '/sedona-mountain-side-tablet.jpg',
+};
+
+
 
 const styles = theme => createStyles({
   hero: {
-    minHeight: "770px",
+    minHeight: "180vw",
     width: "100%",
-    padding: theme.spacing(1),
     position: "relative",
-    backgroundImage: `url(${bgImageMobile})`,
+    // backgroundImage: `url(${bgImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
     backgroundAttachment: 'fixed',
+    backgroundPositionX: '-230px',
+    backgroundSize: 'cover',
+    '@media screen and (min-width: 426px)': {
+      minHeight: "160vw",
+    },
+    '@media screen and (min-width: 500px)': {
+      minHeight: "140vw",
+    },
+    '@media screen and (min-width: 600px)': {
+      minHeight: '100vw',
+    },
     [theme.breakpoints.up('sm')]: {
-      backgroundImage: `url(${bgImageTablet})`,
       '@media screen and (orientation:landscape)': {
-        minHeight: "360px",
-        backgroundImage: `url(${bgImageMobilePortrait})`
+        minHeight: '90vw',
       },
-      minHeight: '1100px',
     },
     [theme.breakpoints.up('md')]: {
-      backgroundImage: `url(${bgImage})`,
-      minHeight: '860px',
+      minHeight: '60vw',
     },
     [theme.breakpoints.up('lg')]: {
-      backgroundPosition: 'center'
+      minHeight: '45vw',
     }
   },
   heroOverlay: {
@@ -82,23 +94,68 @@ const styles = theme => createStyles({
     [theme.breakpoints.up('lg')]: {
       fontSize: "4.5em",
     }
+  },
+  heroTextContainer: {
+  },
+  heroBackground: {
+    width: '100%',
+    height: 'auto',
+    position: 'absolute',
+    bottom:'0',
+    zIndex: '-1'
   }
 });
 
 
+
 class Hero extends React.Component {
+
+  // the following code dynamically changes the background image depending on the screen size in order to save on load times
+  componentDidMount() {
+    window.addEventListener('resize', this.getImageBasedOnScreenWidth);
+    window.addEventListener('load', this.getImageBasedOnScreenWidth);
+    this.getImageBasedOnScreenWidth();
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getImageBasedOnScreenWidth);
+    window.removeEventListener('load', this.getImageBasedOnScreenWidth);
+  };
+
+  getImageBasedOnScreenWidth = () => {
+    if (typeof window !== 'undefined') {
+      const heroBackground = document.getElementById('hero-background');
+      const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      heroBackground.setAttribute('src', IMAGE_URLS.mobile)
+      if (width > 600) {
+        heroBackground.setAttribute('src', IMAGE_URLS.tablet)
+      };
+      if (width > 960) {
+        heroBackground.setAttribute('src', IMAGE_URLS.desktop)
+      };
+      if (width > 1280) {
+        heroBackground.setAttribute('src', IMAGE_URLS.desktopLarge)
+      };
+    }
+  }
+
+
+
   render() {
-    
+
+    const { classes } = this.props;
+
     return (
 
-      <>
+      <div className={classes.hero}>
         {/* <Grid className={this.props.classes.heroOverlay}></Grid> */}
-        <Grid className={this.props.classes.hero}>
+        <Grid className={this.props.classes.heroTextContainer}>
           <Typography variant="h1" align="left" className={this.props.classes.heroText}>
             Empowering Mobile <br/> Network Operators <br/> in a Digital Age
           </Typography>
         </Grid>
-      </>
+        <img id="hero-background" className={classes.heroBackground} />
+      </div>
     )
   } 
 }
