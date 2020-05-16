@@ -28,11 +28,12 @@ const styles = theme => createStyles({
   logo: {
     padding: "0 0 0 12px",
     cursor: "pointer",
+    height: "27px",
     [theme.breakpoints.up('sm')]: {
-      height: "24px",
+      height: "27px",
     },
     [theme.breakpoints.up('md')]: {
-      height: "28px",
+      height: "34px",
     },
   },
   grow: {
