@@ -46,6 +46,14 @@ const styles = theme => createStyles({
   },
   logo: {
     height: "24px",
+  },
+  tel: {
+    color: '#37AEFF',
+    textDecoration: 'none',
+    '&:hover': {
+      color: '#227fbb',
+      transition: 'color .3s, ease-out',
+    }
   }
 });
 
@@ -72,22 +80,21 @@ class Footer extends React.Component {
               Main Office
             </Typography>
             <Typography variant="body2" align="left">
-              SEDONA K.K.<br />
+              SEDONA Co. Ltd.<br />
               Ebisunishi 1-33-6 1F<br/>
               Shibuya, Tokyo 150-0021<br/>
-              JAPAN
+              JAPAN<br /><br />	
+              Tel: <a className={classes.tel} href="tel:81-3-5530-8785">+81-3-5530-8785</a><br />
+              Email: <a className={classes.tel} href="mailto:info@sedo.na">info@sedo.na</a>
             </Typography>
           </Grid>
 
 
           <Grid item xs={12} className={`${classes.footerCol} ${classes.footerLast}`}>
-            <Grid item xs={4}>
+            <Grid item xs={12}>
               <Typography variant="body2" align="left">
                 © {new Date().getFullYear()} Sedona. All Rights Reserved.
               </Typography>
-            </Grid>
-            <Grid item xs={8}>
-              
             </Grid>
           </Grid>
         </Grid>

@@ -84,7 +84,7 @@ const styles = theme => createStyles({
 
 
 const parallaxBackgroundStyle = {
-  left: '890px',
+  left: '860px',
   bottom: '-420px',
   wdith: '120%',
   height: 'auto',

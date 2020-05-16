@@ -105,7 +105,7 @@ const styles = theme => createStyles({
     '&:hover': {
       color: "#227fbb",
       textDecoration: "none",
-      transition: "color 2s, ease-out",
+      transition: 'color .3s, ease-out',
     }
   }
 });

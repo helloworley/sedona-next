@@ -100,7 +100,7 @@ class MyApp extends App {
       <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <title>Sedona</title>
       </Head>
         <CssBaseline />

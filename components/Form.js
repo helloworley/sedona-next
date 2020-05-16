@@ -58,44 +58,126 @@ const styles = theme => createStyles({
   }
 });
 
+const organizationTypes = [
+  {
+    value: 'Mobile Network Operator',
+    label: 'Mobile Network Operator',
+  },
+  {
+    value: 'Consultant or Integrator',
+    label: 'Consultant or Integrator',
+  },
+  {
+    value: 'Other',
+    label: 'Other',
+  },
+];
+
 class Form extends React.Component {
-  state = {
-    name: '',
-    company: '',
-    email: '',
-    organization: '',
-    inquiry: '',
-  };
+
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+    this.state = {
+      name: '',
+      company: '',
+      email: '',
+      organization: '',
+      inquiry: '',
+      displaySubmit: true,
+    }
+  }
 
   componentDidMount() {
     this.forceUpdate();
   }
   
-  handleChange = name => event => {
+  handleChange = prop => event => {
     this.setState({
-      [name]: event.target.value,
+      ...this.state,
+      [prop]: event.target.value
     });
+    // console.log('state', this.state);
   };
+
+  getData() {
+    const formData = {
+      name: this.state.name,
+      company: this.state.company,
+      email: this.state.email,
+      organization: this.state.organization,
+      inquiry: this.state.inquiry,
+    }
+    return formData;
+  }
+
+  componentDidMount() {
+    const theForm = document.getElementById('contact-form');
+    this.waitForForm(theForm);
+  }
+
+
+  waitForForm(form) {
+    if(typeof form !== 'undefined') {
+      this.addSubmitListener(form);
+    } else {
+      this.waitForForm(document.getElementById('contact-form'));
+    }
+  }
+
+  addSubmitListener(theForm) {
+    // console.log('add listener');
+
+    theForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = this.getData();
+      this.submitStatus = 'PENDING';
+      fetch(`https://usebasin.com/f/bfefabc83256.json`, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+            'content-type': 'application/json'
+        }
+      }).then(res => {
+        res
+          .json()
+          .then(data => {
+              this.state.messageSent = data.success;
+              this.setState({
+                ...this.state,
+                displaySubmit: false,
+              });
+          });
+      });
+      setTimeout(() => {
+        this.submitStatus = 'OK'
+      }, 500)
+
+    });
+  }
+
+  displaySubmit() {
+    if (this.state.displaySubmit) {
+      return <UserGreeting />;
+    }
+    return <GuestGreeting />;
+  }
 
 
 
   render() {
     const { classes } = this.props;
 
-    const organizationTypes = [
-      {
-        value: 'Mobile Network Operator',
-        label: 'Mobile Network Operator',
-      },
-      {
-        value: 'Consultant or Integrator',
-        label: 'Consultant or Integrator',
-      },
-      {
-        value: 'Other',
-        label: 'Other',
-      },
-    ];
+    const submitButton = (
+      <div className={classes.submitButtonWrapper}>
+        <Button variant="contained" color="primary" type="submit" value="Send" className={classes.button}>
+            Send
+          <SendIcon className={classes.extendedIcon} />
+        </Button>       
+      </div>
+    );
+    const thankYouMessage = <p>Thank you for your inquiry. We will be with you shortly.</p>;
+
 
     return (
       
@@ -112,7 +194,12 @@ class Form extends React.Component {
               How may we help you?
             </Typography>
 
-            <form action="#" method="POST">
+            <form 
+              className={classes.root}
+              noValidate
+              id="contact-form"
+              autoComplete="off"
+            >
 
               <Grid container spacing={5}>
 
@@ -132,7 +219,7 @@ class Form extends React.Component {
 
                   <TextField
                     name="Company"
-                    id="filled-company"
+                    id="company"
                     label="Company"
                     className={classes.formControl}
                     value={this.state.company}
@@ -144,7 +231,7 @@ class Form extends React.Component {
 
                   <TextField
                     name="Email"
-                    id="filled-email-input"
+                    id="email"
                     label="Email"
                     className={classes.formControl}
                     type="email"
@@ -159,7 +246,7 @@ class Form extends React.Component {
                   <TextField
                     select
                     name="Organization Type"
-                    id="filled-select-organization"
+                    id="organization"
                     className={classes.formControl}
                     variant="filled"
                     label="Organization Type"
@@ -183,7 +270,7 @@ class Form extends React.Component {
                   <div>
                     <TextField
                       name="Inquiry"
-                      id="filled-inquiry"
+                      id="inquiry"
                       label="Inquiry"
                       multiline
                       rows="6"
@@ -196,10 +283,7 @@ class Form extends React.Component {
                     />
                   </div>
 
-                  <Button variant="contained" color="primary" type="submit" value="Send" className={classes.button}>
-                      Send        
-                    <SendIcon className={classes.extendedIcon} />
-                  </Button>              
+                  {this.state.displaySubmit ? submitButton : thankYouMessage}        
 
                 </Grid>
               </Grid>
