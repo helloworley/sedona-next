@@ -9,6 +9,9 @@ import DigitalServices from '../components/DigitalServices';
 import AboutSedona from '../components/AboutSedona';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+
+import ogImg from '../public/200624-sedona-og.jpg'
 
 
 const styles = theme => ({
@@ -84,8 +87,14 @@ const styles = theme => ({
   
   
     render() {
+
       return (
         <div>
+          <SEO
+            title="Sedona"
+            description="Empowering Mobile Network Operators in a Digital Age"
+            image={ogImg}
+          />
           <Nav topRef={this.topRef} navItems={this.state.navItems} />
           <Hero ref={this.topRef} />
           <FraudMGMT ref={this.state.navItems[0].reference} />
