@@ -5,47 +5,42 @@ import Grid from '@material-ui/core/Grid';
 import { Parallax, Background } from 'react-parallax';
 
 // assets
-
-const IMAGE_URLS = {
-  desktopLarge: '/sedona-mountain-side.jpg',
-  desktop: '/sedona-mountain-side-desktop.jpg',
-  mobile: '/sedona-mountain-side-mobile.jpg',
-  mobilePortrait: '/sedona-mountain-side-mobile-portrait.jpg',
-  tablet: '/sedona-mountain-side-tablet.jpg',
-};
-
-
+const bgImage = '/sedona-mountain-side.jpg';
 
 const styles = theme => createStyles({
   hero: {
-    minHeight: "180vw",
+    minHeight: "770px",
     width: "100%",
+    padding: theme.spacing(1),
     position: "relative",
-    // backgroundImage: `url(${bgImage})`,
-    backgroundSize: 'cover',
+    backgroundImage: `url(${bgImage})`,
+    backgroundSize: '220vh',
+    backgroundPositionY: '-80px',
+    backgroundPositionX: '15%',
     backgroundRepeat: "no-repeat",
-    backgroundAttachment: 'fixed',
-    backgroundPositionX: '-230px',
-    backgroundSize: 'cover',
-    '@media screen and (min-width: 426px)': {
-      minHeight: "160vw",
-    },
-    '@media screen and (min-width: 500px)': {
-      minHeight: "140vw",
-    },
-    '@media screen and (min-width: 600px)': {
-      minHeight: '100vw',
-    },
+    backgroundAttachment: 'initial',
+    // background: 'rgba(236,235,233,1)',
+    // background: '-moz-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    // background: '-webkit-gradient(left top, left bottom, color-stop(0%, rgba(236,235,233,1)), color-stop(51%, rgba(247,206,163,1)), color-stop(100%, rgba(243,217,188,1)))',
+    // background: '-webkit-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    // background: '-o-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    // background: '-ms-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    // background: 'linear-gradient(to bottom, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
+    // filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ecebe9", endColorstr="#f3d9bc", GradientType=0 )',
     [theme.breakpoints.up('sm')]: {
+      backgroundPositionY: '0px',
+      backgroundSize: 'cover',
       '@media screen and (orientation:landscape)': {
-        minHeight: '90vw',
+        minHeight: "360px",
       },
     },
     [theme.breakpoints.up('md')]: {
-      minHeight: '60vw',
+      backgroundAttachment: 'fixed',
+      minHeight: '860px',
     },
     [theme.breakpoints.up('lg')]: {
-      minHeight: '45vw',
+      backgroundPosition: 'center',
+      minHeight: '800px',
     }
   },
   heroOverlay: {
@@ -59,7 +54,7 @@ const styles = theme => createStyles({
     //   background: "none",
     // },
     [theme.breakpoints.up('md')]: {
-      height: "900px",
+      height: "00px",
     },
   },
   heroText: {
@@ -94,87 +89,22 @@ const styles = theme => createStyles({
     [theme.breakpoints.up('lg')]: {
       fontSize: "4.5em",
     }
-  },
-  heroTextContainer: {
-  },
-  heroBackground: {
-    width: '100%',
-    height: 'auto',
-    position: 'fixed',
-    bottom:'0',
-    top: '0',
-    zIndex: '-1',
-  },
-  bgFallback: {
-    background: 'rgba(236,235,233,1)',
-    // background: '-moz-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-webkit-gradient(left top, left bottom, color-stop(0%, rgba(236,235,233,1)), color-stop(51%, rgba(247,206,163,1)), color-stop(100%, rgba(243,217,188,1)))',
-    // background: '-webkit-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-o-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: '-ms-linear-gradient(top, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // background: 'linear-gradient(to bottom, rgba(236,235,233,1) 0%, rgba(247,206,163,1) 51%, rgba(243,217,188,1) 100%)',
-    // filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#ecebe9", endColorstr="#f3d9bc", GradientType=0 )',
-    width: '100%',
-    height: '100vh',
-    position: 'absolute',
-    top: '0',
-    zIndex: '-2',
   }
 });
 
 
-
 class Hero extends React.Component {
-
-  // the following code dynamically changes the background image depending on the screen size in order to save on load times
-  componentDidMount() {
-    window.addEventListener('resize', this.getImageBasedOnScreenWidth);
-    window.addEventListener('load', this.getImageBasedOnScreenWidth);
-    this.getImageBasedOnScreenWidth();
-  };
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.getImageBasedOnScreenWidth);
-    window.removeEventListener('load', this.getImageBasedOnScreenWidth);
-  };
-
-  getImageBasedOnScreenWidth = () => {
-    if (typeof window !== 'undefined') {
-      const heroBackground = document.getElementById('hero-background');
-      const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      heroBackground.setAttribute('src', IMAGE_URLS.mobile)
-      if (width > 600) {
-        heroBackground.setAttribute('src', IMAGE_URLS.tablet)
-      };
-      if (width > 960) {
-        heroBackground.setAttribute('src', IMAGE_URLS.desktop)
-      };
-      if (width > 1280) {
-        heroBackground.setAttribute('src', IMAGE_URLS.desktopLarge)
-      };
-    }
-  }
-
-
-
   render() {
-
-    const { classes } = this.props;
-
+    
     return (
 
       <>
-      <div className={classes.hero}>
         {/* <Grid className={this.props.classes.heroOverlay}></Grid> */}
-        <Grid className={this.props.classes.heroTextContainer}>
+        <Grid className={this.props.classes.hero}>
           <Typography variant="h1" align="left" className={this.props.classes.heroText}>
             Empowering Mobile <br/> Network Operators <br/> in a Digital Age
           </Typography>
         </Grid>
-        <img id="hero-background" className={classes.heroBackground} />
-        <div className={classes.bgFallback} />
-      </div>
-      
       </>
     )
   } 

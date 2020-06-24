@@ -14,6 +14,7 @@ import SecurityIcon from '@material-ui/icons/Security';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
+import ScreenLockPortraitIcon from '@material-ui/icons/ScreenLockPortrait';
 
 
 const styles = theme => createStyles({
@@ -88,6 +89,7 @@ const styles = theme => createStyles({
   },
   listItemText: {
     lineHeight: "1.5",
+    textAlign: 'justify',
   },
   description: {
     margin: "0 0 56px"
@@ -121,7 +123,7 @@ class FraudMGMT extends React.Component {
         text: 'Fraud coverage for traditional and digital services'
       },
       {
-        icon: (<SecurityIcon className={this.props.classes.icon} />),
+        icon: (<ScreenLockPortraitIcon className={this.props.classes.icon} />),
         text: 'Mobile Financial Services (MFS) fraud management'
       },
       {
@@ -133,7 +135,7 @@ class FraudMGMT extends React.Component {
         text: 'SIM-swap fraud protection real-time payments'
       },
     ]
-  }
+  };
 
   render() {
 
@@ -154,8 +156,8 @@ class FraudMGMT extends React.Component {
           <Grid container spacing={5}>
           <Grid item xs={12} md={6} className={classes.description}>
             <div className={`${classes.aboutText} ${classes.extraPaddingMobile}`}>
-              <Typography variant="body1" align="left" className={classes.darkgray}>
-              Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
+              <Typography variant="body1" align="left" className={classes.darkgray} align="justify">
+                Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
               </Typography>
             </div>
           </Grid>
@@ -170,7 +172,7 @@ class FraudMGMT extends React.Component {
                   <tr key={i} className={classes.listRow}>
                     <td className={classes.iconCell}>{item.icon}</td>
                     <td className={classes.listItem}>
-                      <Typography variant="body2" align="left" className={`${classes.listItemText} ${classes.darkgray}`}>
+                      <Typography variant="body2" align="justify" className={`${classes.listItemText} ${classes.darkgray}`}>
                         {item.text}
                       </Typography>
                     </td>

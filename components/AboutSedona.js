@@ -60,10 +60,10 @@ class AboutSedona extends React.Component {
                 <Typography variant="h2" className={this.props.classes.DSHeading}>
                   About Sedona
                 </Typography>
-                <Typography variant="body1" align="left">
-                Headquartered in Tokyo but with a global presence, Sedona was founded by leaders in the field of telecom Revenue Assurance, Fraud Management and Digital Service Delivery. We brought together a best-in-breed team of professionals with extensive industry experience that harness the latest technologies in data analytics, machine learning and blockchain.
+                <Typography variant="body1" align="justify">
+                  With presence in four continents and headquartered in Tokyo, Sedona was founded by leaders in the field of telecom Revenue Assurance, Fraud Management and Digital Service Delivery. We brought together a best-in-breed team of professionals with extensive industry experience that harnesses the latest technologies in data analytics, machine learning and blockchain.
                 <br/><br/>
-                We value customer service first and foremost, and follow the software-as-a-service (SaaS) business model to provide turnkey solutions.
+                  We have developed proprietary, innovative products that are revolutionizing the way challenges are approached, managed and optimized. We have deployments across verticals within the Financial services and Telecom Operators’ domains over multiple geographic regions. Our solutions are offered as turnkey managed services and can be very quickly deployed just as they can be easily scaled, to compliment growth. We take pride in our customer support and ability to be nimble and rapidly deploy to meet the market-specific needs of our customers.
                 </Typography>
               </div>
             </div>
