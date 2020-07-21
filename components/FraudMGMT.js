@@ -9,12 +9,13 @@ const sedonaShieldDG = '/sedona-shield-darkgray.svg';
 
 // icons import
 import EqualizerIcon from '@material-ui/icons/Equalizer';
-import DeveloperBoardIcon from '@material-ui/icons/DeveloperBoard';
-import SecurityIcon from '@material-ui/icons/Security';
+import DeveloperBoardIcon from '@material-ui/icons/SdStorage';
+import SecurityIcon from '@material-ui/icons/VerifiedUser';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import FindInPageIcon from '@material-ui/icons/FindInPage';
+import AssignmentIndIcon from '@material-ui/icons/MonetizationOn';
+import FindInPageIcon from '@material-ui/icons/PhonelinkSetup';
 import ScreenLockPortraitIcon from '@material-ui/icons/ScreenLockPortrait';
+import AnalyticsIcon from '@material-ui/icons/EmojiObjects';
 
 
 const styles = theme => createStyles({
@@ -42,7 +43,7 @@ const styles = theme => createStyles({
     textAlign: 'center',
   },
   serviceLogo: {
-    height: "80px",
+    height: "140px",
     margin: "0 0 20px",
   },
   extraPaddingMobile: {
@@ -55,8 +56,7 @@ const styles = theme => createStyles({
     margin: "0 0 15px",
   },
   h2Subtext: {
-    fontWeight: 500,
-    margin: "0 0 64px",
+    margin: "0",
   },
   darkgray: {
     color: theme.palette.sedona.darkgray,
@@ -70,6 +70,20 @@ const styles = theme => createStyles({
   listRow: {
     height: "40px",
   },
+  iconWrapper: {
+    textAlign: 'center',
+    color: theme.palette.sedona.darkgray,
+    margin: '0 0 12px',
+    textAlign: 'center',
+    width: '80px',
+    backgroundColor: theme.palette.sedona.white,
+    height: '80px',
+    borderRadius: '50%',
+    margin: '0 auto 14px',
+    lineHeight: '106px',
+    border: `solid 3px ${theme.palette.sedona.darkgray}`,
+  },
+  // not used
   iconCell: {
     color: theme.palette.sedona.lightgray,
     minWidth: "35px",
@@ -78,14 +92,19 @@ const styles = theme => createStyles({
     margin: "0",
   },
   icon: {
-    fontSize: "25px",
+    fontSize: "40px",
+    color: theme.palette.sedona.darkgray,
+
   },
   listItem: {
-    margin: "0 0 25px",
+    margin: "0 0 40px",
+    maxWidth: '250px',
+    margin: '0 auto',
+    color: theme.palette.sedona.darkgray,
     [theme.breakpoints.up('sm')]: {
-      margin: "0 0 10px",
       lineHeight: "2.6",
-    },
+      margin: "0 auto 56px",
+    }
   },
   listItemText: {
     lineHeight: "1.5",
@@ -99,7 +118,7 @@ const styles = theme => createStyles({
   },
   aboutText: {
     [theme.breakpoints.up('md')]: {
-      maxWidth: '460px',
+      maxWidth: '820px',
       margin: '0 auto',
     }
   }
@@ -115,7 +134,7 @@ class FraudMGMT extends React.Component {
         text: 'Optimized for mobile telecommunications operators'
       },
       {
-        icon: (<EqualizerIcon className={this.props.classes.icon} />),
+        icon: (<AnalyticsIcon className={this.props.classes.icon} />),
         text: 'Realtime data analytics platform with machine learning'
       },
       {
@@ -149,24 +168,42 @@ class FraudMGMT extends React.Component {
             <Typography variant="h2" align="center" className={`${classes.FraudMGMTText} ${classes.darkgray}`}>
               Sedona FMS 
             </Typography>
-            <Typography variant="h4" align="center" className={`${classes.h2Subtext} ${classes.lightgray}`}>
+            <Typography variant="h3" align="center" className={`${classes.h2Subtext} ${classes.lightgray}`}>
               The Next Generation of Telecom Fraud Management
             </Typography>
           </Grid>
           <Grid container spacing={5}>
-          <Grid item xs={12} md={6} className={classes.description}>
+          <Grid item xs={12} className={classes.description}>
             <div className={`${classes.aboutText} ${classes.extraPaddingMobile}`}>
-              <Typography variant="body1" align="left" className={classes.darkgray} align="justify">
+              <Typography variant="body2" className={classes.darkgray} align="center">
                 Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={12} md={6}>
-          <div className={classes.extraPaddingMobile}>
+          <Grid item xs={12}>
+            <div className={classes.extraPaddingMobile}>
+            <Grid container spacing="4">
+              {this.state.providedByPlatformData.map((item, i) => (
+                  <Grid row key={i}  xs="6" md="4" >
+                    <div>
+                      <div className={classes.iconWrapper}>
+                        {item.icon}
+                      </div>
+                      <div className={classes.listItem}>
+                        <Typography variant="h3" align="center">
+                          {item.text}
+                        </Typography>
+                      </div>
+                    </div>
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+
             {/* <Typography variant="h3">
               Our platform provides you
             </Typography> */}
-            <table className={classes.table}>
+            {/* <table className={classes.table}>
               <tbody>
                 {this.state.providedByPlatformData.map((item, i) => (
                   <tr key={i} className={classes.listRow}>
@@ -180,7 +217,10 @@ class FraudMGMT extends React.Component {
                 ))}
               </tbody>
             </table>
-            </div>
+            
+            */}
+             
+            
           </Grid>
         </Grid>
       </Grid>

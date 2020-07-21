@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
-    "@material-ui/icons": "^4.9.1",
+    "@material-ui/icons": "latest",
     "@react-spring/parallax": "9.0.0-canary.808.8.4a87fcb",
     "babel-cli": "^6.26.0",
     "next": "^9.3.6",
