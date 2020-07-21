@@ -175,7 +175,7 @@ class FraudMGMT extends React.Component {
           <Grid container spacing={5}>
           <Grid item xs={12} className={classes.description}>
             <div className={`${classes.aboutText} ${classes.extraPaddingMobile}`}>
-              <Typography variant="body2" className={classes.darkgray} align="center">
+              <Typography variant="body2" className={classes.darkgray} align="justify">
                 Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
               </Typography>
             </div>
@@ -190,7 +190,7 @@ class FraudMGMT extends React.Component {
                         {item.icon}
                       </div>
                       <div className={classes.listItem}>
-                        <Typography variant="h3" align="center">
+                        <Typography variant="h3" align="justify">
                           {item.text}
                         </Typography>
                       </div>
