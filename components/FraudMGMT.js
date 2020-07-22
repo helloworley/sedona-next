@@ -89,18 +89,26 @@ const styles = theme => createStyles({
   },
   listItemText: {
     lineHeight: "1.5",
-    textAlign: 'justify',
+    textAlign: 'left',
+    marginBottom: '5px',
+    [theme.breakpoints.up('lg')]: {
+      textAlign: 'justify',
+      marginBottom: '0',
+    }
   },
   description: {
     margin: "0 0 56px"
   },
   table: {
-    margin: "0 auto",
+    // margin: "0 auto",
   },
   aboutText: {
+    [theme.breakpoints.up('sm')]: {
+      margin: '0 auto 0',
+    },
     [theme.breakpoints.up('md')]: {
-      maxWidth: '460px',
-      margin: '0 auto',
+      maxWidth: '540px',
+      margin: '8px auto 0',
     }
   }
 });
@@ -157,7 +165,7 @@ class FraudMGMT extends React.Component {
           <Grid item xs={12} md={6} className={classes.description}>
             <div className={`${classes.aboutText} ${classes.extraPaddingMobile}`}>
               <Typography variant="body1" align="left" className={classes.darkgray} align="justify">
-                Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime.
+                Sedona Fraud Management System (Sedona FMS) is a powerful and flexible data analytics platform that leverages mobile network data to make financial and other digital services safer and easier to use. Sedona FMS is focused on improving digital services, particularly making blockchain based transactions safe in realtime. Sedona FMS is an augmented AI managed service, operated by Sedona's team of expert fraud and security analysts and data scientists, and run on a machine learning engine optimized for mobile telecommunications data.
               </Typography>
             </div>
           </Grid>
@@ -172,7 +180,7 @@ class FraudMGMT extends React.Component {
                   <tr key={i} className={classes.listRow}>
                     <td className={classes.iconCell}>{item.icon}</td>
                     <td className={classes.listItem}>
-                      <Typography variant="body2" align="justify" className={`${classes.listItemText} ${classes.darkgray}`}>
+                      <Typography variant="body1" className={`${classes.listItemText} ${classes.darkgray}`}>
                         {item.text}
                       </Typography>
                     </td>
